@@ -1,0 +1,35 @@
+!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+
+<body>
+
+<h1>Product list</h1>
+
+<table>
+    <tr>
+        <th>State</th>
+        <th>Contry</th>
+        <th>Cases</th>
+    </tr>
+    <tr th:each="allStat : ${allStats}">
+        <td th:text="${allStat.getState()}"></td>
+        <td th:text="${allStat.getCountry()}">2.41</td>
+        <td th:text="${allStat.getState()}"></td>
+    </tr>
+</table>
+
+<p>
+    <a href="../home.html" th:href="@{/}">Return to home</a>
+</p>
+
+</body>
+
+</html>
