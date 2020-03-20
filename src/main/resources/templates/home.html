@@ -1,17 +1,27 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Good Thymes Virtual Grocery</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" type="text/css" media="all"
-          href="../../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 </head>
 
 <body>
+<div class="container">
 
-<h1>Product list</h1>
+
+
+    <div class="jumbotron">
+        <h4>Number Of Cases Reported of Covid-19 </h4>
+        <p>This application lists the current number of cases reported across the globe</p>
+    <h1 class="display-4" th:text="${totalnum}"></h1>
+    <p class="lead">Total cases reported as of today</p>
+
+
+</div>
 
 <table>
     <tr>
@@ -20,16 +30,16 @@
         <th>Cases</th>
     </tr>
     <tr th:each="allStat : ${allStats}">
-        <td th:text="${allStat.getState()}"></td>
-        <td th:text="${allStat.getCountry()}">2.41</td>
-        <td th:text="${allStat.getState()}"></td>
+        <td th:text="${allStat.state}"></td>
+        <td th:text="${allStat.country}">2.41</td>
+        <td th:text="${allStat.numberOfCases}"></td>
     </tr>
 </table>
 
 <p>
     <a href="../home.html" th:href="@{/}">Return to home</a>
 </p>
-
+</div>
 </body>
 
 </html>

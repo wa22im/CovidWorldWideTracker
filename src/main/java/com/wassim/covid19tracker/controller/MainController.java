@@ -22,7 +22,13 @@ public class MainController {
     public  String homePage(Model model){
         ArrayList <Cordinations> allStats = serviceCovidData.getCordinationsList();
 
+        int totalReportedCases = allStats.stream().mapToInt(stat -> stat.getNumberOfCases()).sum();
+
         model.addAttribute("allStats",allStats);
+
+        model.addAttribute("totalnum",totalReportedCases);
+
+
         return "home";
 
     }

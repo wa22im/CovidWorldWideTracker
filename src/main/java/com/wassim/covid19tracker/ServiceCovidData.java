@@ -49,10 +49,10 @@ public class ServiceCovidData {
 
         StringReader csvBuddyReady = new StringReader(httpResponse.body());
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(csvBuddyReady);
-        Cordinations cordinations = new Cordinations() ;
         for (CSVRecord record : records) {
             String state = record.get("Province/State");
             String country =record.get("Country/Region");
+            Cordinations cordinations = new Cordinations() ;
 
             int numberofCases = Integer.parseInt(record.get(record.size()-1));
 
